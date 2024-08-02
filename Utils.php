@@ -42,7 +42,11 @@
         }
 
         public static function implodeInsert(array $array): string {
-            return "(". implode(", ", $array) .")";
+            return "(". self::implodeValues($array) .")";
+        }
+
+        public static function implodeValues(array $values): string {
+            return implode(", ", $values);
         }
 
         public static function formatUpdate(array $values, array $columns): string {
